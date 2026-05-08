@@ -21,7 +21,7 @@ import { dirname } from "node:path";
 // ── Git helpers ──
 
 function git(args: string): string {
-  return execSync(`git ${args}`, { encoding: "utf-8", timeout: 10_000 });
+  return execSync(`git ${args}`, { encoding: "utf-8", timeout: 10_000, maxBuffer: 50 * 1024 * 1024 });
 }
 
 function gitTry(args: string): string | null {
@@ -182,6 +182,7 @@ function gatherConventions(): string {
         const files = execSync(`ls ${pattern} 2>/dev/null || true`, {
           encoding: "utf-8",
           timeout: 2000,
+          maxBuffer: 10 * 1024 * 1024,
         })
           .trim()
           .split("\n")
