@@ -1,0 +1,34 @@
+{
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "cat *.env*": "ask",
+      "cat *.key": "ask",
+      "cat *.pem": "ask",
+      "cat *.tfstate*": "ask",
+      "cat *credentials*": "ask",
+      "cat *history": "ask",
+      "cat *kubeconfig*": "ask",
+      "cat *token*": "ask",
+      "cat .env*": "ask",
+      "cat .ssh/*": "ask",
+      "docker exec *": "ask",
+      "docker run *-it*": "ask",
+      "docker run *bash*": "ask",
+      "docker run *sh*": "ask",
+      "env": "ask",
+      "git push *": "ask",
+      "grep *.aws/*": "ask",
+      "kubectl delete*": "ask",
+      "kubectl describe secret*": "ask",
+      "printenv": "ask",
+      "rg *.aws/*": "ask",
+      "rm -rf *": "ask",
+      "terraform apply*": "ask",
+      "terraform destroy*": "ask",
+      "tofu apply*": "ask",
+      "tofu destroy*": "ask"
+    },
+    "external_directory": "ask"
+  }
+}
